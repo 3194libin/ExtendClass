@@ -1,18 +1,17 @@
-import random as r
+class Turtle:
+    def __init__(self,x):
+        self.num = x
 
 class Fish:
-    def fish(self):
-        print("我是一条小鱼")
-class GoldFish:
-    def goldfish(self):
-        print("我是一条金鱼")
-class Carp:
-    def carpfish(self):
-        print("我是一条鳗鱼")
-class Shark(Fish,GoldFish,Carp):
-    pass
+    def __init__(self,y):
+        self.num = y
 
-s = Shark()
-s.carpfish()
-s.fish()
-s.goldfish()
+class Pool:
+    def __init__(self,x,y):
+        self.turtle = Turtle(x)
+        self.fish = Fish(y)
+    def print_num(self):
+        print("池子里总共有%d 只乌龟，%d条鱼" % (self.turtle.num,self.fish.num))
+
+pool = Pool(10,20)
+pool.print_num()
